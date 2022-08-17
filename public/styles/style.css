@@ -1,6 +1,7 @@
 /*--------------------------Fonts------------------------*/
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,300&display=swap");
 /* -------------------sass background colors-------------------*/
+/* -------------------sass text colors-------------------*/
 /*--------------------------HTML------------------------*/
 * {
   box-sizing: border-box;
@@ -34,6 +35,9 @@ body {
   grid-area: main;
   background-color: rgb(22, 145, 116);
 }
+.main h1 {
+  color: rgb(164, 187, 211);
+}
 
 .aside {
   grid-area: aside;
@@ -44,6 +48,9 @@ body {
   grid-area: footer;
   background-color: rgb(234, 111, 105);
 }
+.footer p {
+  color: rgb(17, 18, 15);
+}
 
 /*--------------------------Grid layout------------------------*/
 .container {
@@ -52,7 +59,7 @@ body {
   grid-template: "header" 20vh "aside" 30vh "main" 70vh "footer" 10vh/auto;
 }
 
-/*-------------------@mediaQuerys*/
+/*-------------------@mediaQuerys*------------------------------*/
 @media (min-width: 600px) {
   /*--------------------------Grid layout------------------------*/
   .container {

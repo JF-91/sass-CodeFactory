@@ -9,6 +9,10 @@ $main-color: rgb(22, 145, 116);
 $aside-color: rgb(110, 91, 186);
 $footer-color: rgb(234, 111, 105);
 
+/* -------------------sass text colors-------------------*/
+
+$tittle-color: rgb(164, 187, 211);
+$paragraf-color: rgb(17, 18, 15);
 
 
 /*--------------------------HTML------------------------*/
@@ -47,6 +51,10 @@ body {
     grid-area: main;
     background-color: $main-color;
 
+    h1{
+        color: $tittle-color;
+    }
+
 }
 
 .aside{
@@ -58,6 +66,10 @@ body {
 .footer{
     grid-area: footer;
     background-color: $footer-color;
+
+    p{
+        color: $paragraf-color;
+    }
 }
 
 
