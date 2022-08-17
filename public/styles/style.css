@@ -52,6 +52,7 @@ body {
   grid-template: "header" 20vh "aside" 30vh "main" 70vh "footer" 10vh/auto;
 }
 
+/*-------------------@mediaQuerys*/
 @media (min-width: 600px) {
   /*--------------------------Grid layout------------------------*/
   .container {
