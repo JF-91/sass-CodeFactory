@@ -4,15 +4,18 @@
 
 /* -------------------sass background colors-------------------*/
 
-$header-color: rgb(208, 140, 21);
+$header-color: rgb(6, 6, 6);
 $main-color: rgb(22, 145, 116);
 $aside-color: rgb(110, 91, 186);
 $footer-color: rgb(234, 111, 105);
+$navbar-color: rgb(162, 16, 9);
+$btn-color: rgb(247, 247, 247);
+$html-background: rgba(168, 137, 26, 0.755);
 
 /* -------------------sass text colors-------------------*/
 
-$tittle-color: rgb(164, 187, 211);
-$paragraf-color: rgb(17, 18, 15);
+$tittle-color: rgb(248, 248, 248);
+$paragraf-color: rgb(149, 155, 138);
 
 
 /*--------------------------HTML------------------------*/
@@ -25,6 +28,7 @@ $paragraf-color: rgb(17, 18, 15);
 
 html{
     height: 100vh;
+    background-color: $html-background;
 }
 
 body {
@@ -34,6 +38,8 @@ body {
 }
 
 
+/*--------------------------Container > items------------------------*/
+
 .container >*{
     box-shadow: -1px 1px 7px 0px rgba( 0, 0, 0, 0.75);
     border-radius: 4px;
@@ -41,35 +47,121 @@ body {
     text-align: center;
 }
 
+/*--------------------------Navbar------------------------*/
+.navbar{
+    grid-area: navbar;
+    background-color: $navbar-color;
 
-.header{
-    grid-area: header;
-    background-color: $header-color;
+    .flex-navbar{
+        display: flex;
+        
+        justify-content: space-between;
+    }
+    .flex-navbar> div a{
+        display: flex;
+        padding: 1rem;
+        background-color: $btn-color;
+        align-items: center;
+        align-content: space-between;
+
+        text-decoration: none;
+        border-radius: 0.9rem;
+        color: $paragraf-color;
+    }
+    .logo:hover{
+        transform:scale(1.3);
+    }
+    .nav-button:hover{
+        transform:scale(1.3);
+    }
 }
 
-.main{
-    grid-area: main;
-    background-color: $main-color;
+/*--------------------------Header------------------------*/
+.header{
+    grid-area: header;
+    
+    
+    background-color: $header-color;
 
-    h1{
+    background-image: url("../imgs/seneca.webp");
+    background-repeat: no-repeat;
+    background-position: right;
+    background-size: cover;
+
+    .flex-header>*{
         color: $tittle-color;
     }
 
+    .flex-header{
+        display: flex;
+        gap: 3rem;
+        align-items: flex-end;
+        flex-direction: column;
+    }
 }
 
-.aside{
-    grid-area: aside;
-    background-color: $aside-color;
-}
+/*--------------------------Main------------------------*/
+.main{
+    grid-area: main;
+    
+    background-color: $navbar-color;
 
-
-.footer{
-    grid-area: footer;
-    background-color: $footer-color;
-
+    h1{
+        color: $tittle-color;
+        text-align: center;
+        margin-top: 7rem;
+    }
     p{
         color: $paragraf-color;
     }
+
+    .flex-main{
+        display:  flex;
+        justify-content: flex-start;
+        flex-direction: column;
+        gap: 5rem;
+        text-align: justify;
+    }
+}
+
+/*--------------------------Sidebar------------------------*/
+.aside{
+    grid-area: aside;
+    background-color: $navbar-color;
+
+    li{
+        list-style: none;
+       
+    }
+    a{
+        color: $tittle-color;
+        text-decoration: none;
+    }
+
+    .flex-sidebar div ul li{
+       margin:5rem;
+    }
+}
+
+
+/*--------------------------Footer------------------------*/
+
+.footer{
+    grid-area: footer;
+    background-color: $header-color;
+
+    .flex-footer{
+        display:  flex;
+        justify-content: center;
+        flex-direction: column;
+        margin: 1rem;
+        
+    }
+    .flex-footer >  h3, p{
+        color: $tittle-color;
+    }
+    
+   
 }
 
 
@@ -79,11 +171,13 @@ body {
 .container {
     display: grid;
     gap: 10px;
-    grid-template: "header"     20vh
-                    "aside"     30vh
-                    "main"      70vh
-                    "footer"   10vh /
-                    auto;
+    grid-template:  "navbar"        10vh
+                    "header"        20vh
+                    "aside"         120vh
+                    "main"          70vh
+                    "footer"        10vh /
+
+                        auto;
 }       
 
 
@@ -92,14 +186,18 @@ body {
 /*-------------------@mediaQuerys*------------------------------*/
 
 @media (min-width: 600px) {
-    /*--------------------------Grid layout------------------------*/
+
+
+/*--------------------------Grid layout------------------------*/
 .container {
     display: grid;
-    grid-template: 
-                    "header header header"      50vh
-                    "main   main    aside"      30vh
-                    "footer footer  aside"      20vh /
+    grid-template:  "navbar navbar navbar"      10vh
+                    "header header header"      40vh
+                    "main   main    aside"      100vh
+                    "footer footer  footer"      20vh /
                     
-                    auto    auto    auto;
+                    auto    auto    40vh;
 }
+
+
 }
